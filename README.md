@@ -19,6 +19,8 @@ Master code repo for SARmet project.
 
 4. notifapp_final contians android app code for accessing and sending across the notification 
 
+5. VoiceTraining_adaptedModel contains trained voice models using pocketsphinx for voice coammnds. Folder contains various python codes requires to be tested. 
+
 
 
 
