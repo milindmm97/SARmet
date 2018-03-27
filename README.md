@@ -9,6 +9,14 @@ Master code repo for SARmet project.
 
 4. Miscellanous codes (for GUI) 
 
+# Contents
+
+1. VehcileTracking_mezcode contains the visual studio files to run the vehicle detection code on Visual Studio 
+
+2. BBB_Vehcile_code contians the vehicle detection code to be run on the BeagleBone Black 
+
+3. Java_host contains the Java code to set up the server and listen for notifications on the mobile
+
 
 
 
