@@ -17,7 +17,7 @@ Master code repo for SARmet project.
 
 3. Java_host contains the Java code to set up the server and listen for notifications on the mobile
 
-4. notifapp_final contians android app code for accessing and sending across the notification 
+4. Notification_latest contians android app code for accessing and sending across the notification 
 
 5. VoiceTraining_adaptedModel contains trained voice models using pocketsphinx for voice coammnds. Folder contains various python codes requires to be tested. 
 
