@@ -12,7 +12,7 @@ Master code repo for SARmet project.
 
 
 
-#For OpenCv Installation in BeagleBone Black 
+# For OpenCv Installation in BeagleBone Black 
 
 1 cd /opt/scripts/tools
 
@@ -49,7 +49,7 @@ Master code repo for SARmet project.
 
 
 
-#To set display to DLP 
+# To set display to DLP 
 
 i2cset -y 2 0x1b 0x0b 0x00 0x00 0x00 0x00 i
 
@@ -60,3 +60,7 @@ i2cset -y 2 0x1b 0x0c 0x00 0x00 0x00 0x1b i
 export DISPLAY=: 0
 // exporting all display to dlp 
 
+
+# Installing JAVA on BeagleBone Black 
+
+sudo apt-get install oracle-java8-installer
