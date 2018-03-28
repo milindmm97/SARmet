@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+//import javax.util.Timer;
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
 public class GradientTranslucentWindowDemo extends JFrame {
@@ -7,9 +8,11 @@ public class GradientTranslucentWindowDemo extends JFrame {
         super("GradientTranslucentWindow");
 
         setBackground(new Color(0,0,0,0));
-        setSize(new Dimension(1252, 704));				//modify the size
-        setLocationRelativeTo(null);					// set location to bottom 
+        setSize(new Dimension(320, 240));				//modify the size
+        setLocation(60,120);					// set location to bottom
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // replace with timer 
+		
 		setUndecorated(true);
 
         JPanel panel = new JPanel() {
@@ -31,7 +34,10 @@ public class GradientTranslucentWindowDemo extends JFrame {
         };
         setContentPane(panel);
         setLayout(new GridBagLayout());
-        add(new JButton("I am a Button"));
+		JLabel label1 = new JLabel("Test");
+        add(label1);
+		
+		
     }
 
     public static void main(String[] args) {
@@ -54,12 +60,27 @@ public class GradientTranslucentWindowDemo extends JFrame {
         // Create the GUI on the event-dispatching thread
         SwingUtilities.invokeLater(new Runnable() {
             @Override
-            public void run() {
+			//Timer timer = new Timer();
+			//TimerTask task = new TimerTask(){	
+            public void run() 
+			{
                 GradientTranslucentWindowDemo gtw = new
                     GradientTranslucentWindowDemo();
 
                 // Display the window.
                 gtw.setVisible(true);
+				try{Thread.sleep(3000);}
+				catch(Exception e){
+					//System.println("message");
+				}
+				
+			
+				gtw.dispose();
+					
+				//setTimeout(function(){ gtw.dispose() }, 1000);
+				
+
+				
             }
         });
     }
