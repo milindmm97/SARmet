@@ -8,6 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import javax.swing.*;
 import java.awt.*;
+import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
 
 public class host_string {
@@ -21,11 +22,37 @@ public class host_string {
     public static void main(String[] args) {
 
 JFrame frame =new JFrame();
-JPanel panel=new JPanel();
-frame.setVisible(true);
 frame.setSize(600,400);
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-panel.setBackground(Color.YELLOW);
+panel.setBackground(new Color(0,0,0,0));
+JPanel panel=new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                if (g instanceof Graphics2D) {
+                    final int R = 250;
+                    final int G = 250;
+                    final int B = 250;
+
+                    Paint p =
+                        new GradientPaint(0.0f, 0.0f, new Color(R, G, B, 0),
+                            0.0f, getHeight(), new Color(R, G, B, 255), true);
+                    Graphics2D g2d = (Graphics2D)g;
+                    g2d.setPaint(p);
+                    g2d.fillRect(0, 0, getWidth(), getHeight());
+                }
+            }
+        };
+
+frame.setVisible(true);
+try{Thread.sleep(3000);}
+				catch(Exception e){
+					//System.println("message");
+				}
+				
+			
+				frame.dispose();
+
+
 
 
         System.out.println("Server start");
@@ -57,9 +84,9 @@ panel.setBackground(Color.YELLOW);
             while((line = bufferedReader.readLine()) != null){
                 System.out.println(line);
                 JLabel label = new JLabel(line);
-                
-panel.add(label);
-frame.add(panel);
+               
+				panel.add(label);
+				frame.add(panel);
 
                 printWriter.println(line);  //echo back to sender
             };
