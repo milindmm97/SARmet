@@ -22,42 +22,19 @@ public class host_string {
     public static void main(String[] args) {
 
 JFrame frame =new JFrame();
-frame.setSize(600,400);
+JPanel panel=new JPanel();
+frame.setSize(500,80);
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-panel.setBackground(new Color(0,0,0,0));
-JPanel panel=new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                if (g instanceof Graphics2D) {
-                    final int R = 250;
-                    final int G = 250;
-                    final int B = 250;
-
-                    Paint p =
-                        new GradientPaint(0.0f, 0.0f, new Color(R, G, B, 0),
-                            0.0f, getHeight(), new Color(R, G, B, 255), true);
-                    Graphics2D g2d = (Graphics2D)g;
-                    g2d.setPaint(p);
-                    g2d.fillRect(0, 0, getWidth(), getHeight());
-                }
-            }
-        };
-
-frame.setVisible(true);
-try{Thread.sleep(3000);}
-				catch(Exception e){
-					//System.println("message");
-				}
-				
-			
-				frame.dispose();
+frame.setBackground(Color.BLUE);
+frame.setLocation(60,250);
+//frame.setVisible(true);
 
 
 
 
         System.out.println("Server start");
         System.out.println("Runtime Java: " 
-                + System.getProperty("java.runtime.version"));
+                + System.getProperty("Java.runtime.version"));
         
         ServerSocket serverSocket = null;
         Socket clientSocket = null;
@@ -81,12 +58,14 @@ try{Thread.sleep(3000);}
             printWriter = new PrintWriter(outputStream, true);
 
             String line;
+
             while((line = bufferedReader.readLine()) != null){
                 System.out.println(line);
                 JLabel label = new JLabel(line);
                
 				panel.add(label);
 				frame.add(panel);
+				frame.setVisible(true);
 
                 printWriter.println(line);  //echo back to sender
             };
@@ -131,5 +110,4 @@ try{Thread.sleep(3000);}
         }
         
     }
-    
 }

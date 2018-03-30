@@ -10,6 +10,46 @@ import javax.swing.*;
 import java.awt.*;
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
+<<<<<<< HEAD
+public class GradientTranslucentWindowDemo extends JFrame {
+    public GradientTranslucentWindowDemo() {
+        super("GradientTranslucentWindow");
+
+        setBackground(new Color(0,0,0,0));
+        setSize(new Dimension(640, 480));				//modify the size
+       setLocationRelativeTo(null);				// set location to bottom
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // replace with timer 
+		
+		setUndecorated(true);
+
+        JPanel panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                if (g instanceof Graphics2D) {
+                    final int R = 250;
+                    final int G = 250;
+                    final int B = 250;
+
+                    Paint p =
+                        new GradientPaint(0.0f, 0.0f, new Color(R, G, B, 0),
+                            0.0f, getHeight(), new Color(R, G, B, 255), true);
+                    Graphics2D g2d = (Graphics2D)g;
+                    g2d.setPaint(p);
+                    g2d.fillRect(0, 0, getWidth(), getHeight());
+                }
+            }
+        };
+        setContentPane(panel);
+        setLayout(new GridBagLayout());
+		JLabel label1 = new JLabel("Test");
+		label1.setFont(new Font("Serif", Font.BOLD, 48));
+		label1.setForeground(Color.white);
+        add(label1);
+		
+		
+    }
+=======
 
 public class host_string {
 
@@ -18,6 +58,7 @@ public class host_string {
 
 
 
+>>>>>>> b9403744d26f82ef4e90d8f9ccf6195e43f156f1
 
     public static void main(String[] args) {
 
