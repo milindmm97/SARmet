@@ -1,5 +1,7 @@
 # SARmet
+## SARmet Prototype
 <img src="2.png " alt="SARmet Prototype" width="200" align = "center"/>
+--------------------------------------------------------------------------------------------------------------------------------
 Master code repo for SARmet project. 
 
 1. Involves Vehicle detection and tracking code
