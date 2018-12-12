@@ -1,6 +1,6 @@
 # SARmet
 ##                                              SARmet Prototype
-<img src="2.png " alt="SARmet Prototype" width="200" align = "center"/>
+<img src="2.png " alt="SARmet Prototype" width="200" align = "middle"/>
 --------------------------------------------------------------------------------------------------------------------------------
 
 Master code repo for SARmet project. 
