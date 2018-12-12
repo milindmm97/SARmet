@@ -1,5 +1,5 @@
 # SARmet
-![Imgur Image](https://github.com/milindmm97/SARmet/blob/master/2.png)
+![Imgur Image](https://github.com/milindmm97/SARmet/blob/master/2.png =250x250 )
 Master code repo for SARmet project. 
 
 1. Involves Vehicle detection and tracking code
